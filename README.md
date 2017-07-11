@@ -62,4 +62,12 @@ little = int(0xabcd).to_bytes(length=4,byteorder=sys.byteorder)
 ```
 int.from_bytes(little,byteorder=sys.byteorder)
 ```
-int.from_bytes(little
+```
+int(-241).to_bytes(2,byteorder='big') #error
+```
+```
+int(-241).to_bytes(2,byteorder='big',signed=True)
+```
+```
+bin((~0b11110000).to_bytes(2,byteorder='little',signed=True)[0])  #'0b1111'
+```

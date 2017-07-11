@@ -71,3 +71,33 @@ int(-241).to_bytes(2,byteorder='big',signed=True)
 ```
 bin((~0b11110000).to_bytes(2,byteorder='little',signed=True)[0])  #'0b1111'
 ```
+
+### 4 The Bytes Type in Depth
+```
+norsk = b"like \xc5 and \xd8 are not 7bit ASCII"
+norsk.decode('latin1')
+```
+
+```
+bytes() #,65+36 b''
+bytes(5) # b'\x00'
+bytes(range(65,65+26)) #b'ABCD....'
+```
+
+```
+bytes('norwe','utf16')
+# b'..'
+```
+
+```
+bytes.fromhex('123456789abc')
+b''
+```
+reverse:
+```
+''.join(hex(c)[2:] for c in b'The quick fox')
+```
+
+
+
+```

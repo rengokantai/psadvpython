@@ -46,3 +46,20 @@ bin(~0b11110000 & 0b111111111)
 ```
 int(32).bit_length()
 ```
+
+```
+int(0xcaf).to_bytes(length=4,byteorder='big')
+int(0xcaf).to_bytes(length=4,byteorder='little')
+```
+```
+import sys
+sys.byteorder
+#'little'
+```
+```
+little = int(0xabcd).to_bytes(length=4,byteorder=sys.byteorder)
+```
+```
+int.from_bytes(little,byteorder=sys.byteorder)
+```
+int.from_bytes(little

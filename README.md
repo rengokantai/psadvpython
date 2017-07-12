@@ -142,4 +142,12 @@ class Vector:
 ```
 
 
+
+### 3.Overriding __getattr__
+```
+__getattr__()  # invoked after requested attribute/property not found by normal lookup
+```
+
+```
+__getattribute__() # invoked instead of normal lookup
 ```

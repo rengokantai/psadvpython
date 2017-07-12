@@ -99,5 +99,13 @@ reverse:
 ```
 
 
-
+### 5 The bytearray Type
+```
+program = bytearray(b'ke')
+program.extend(b'y')
+```
+split and join
+```
+words = program.split()
+bytearray(b' ').join(words)
 ```

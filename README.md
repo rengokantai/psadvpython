@@ -109,3 +109,37 @@ split and join
 words = program.split()
 bytearray(b' ').join(words)
 ```
+
+
+## 4.Object Internals and Custom Attributes
+### 2 How are Python Objects Represented?
+```
+v.Vector(5,3)
+v.__dict__
+type(v.__dict__)
+v.__dict__['x']
+del v.__dict__['x']
+```
+```
+'x' in v.__dict__
+#false
+```
+
+```
+getattr(v,'x')
+hasattr(v,'x')
+delattr(v,'x')
+setattr(v,'x',9)
+```
+
+###### 03:20
+```
+class Vector:
+  def __init__(self,**coords):
+    self.__dict__.update(coords)
+  def __repr__(self):
+    return "{}({})".format（self.__class__.__name__,','.join("{k}={v}.format(k=k,v=self.__dict__[k]) for k in sorted(self.__dict__.keys())))
+```
+
+
+```
